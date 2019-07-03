@@ -1,17 +1,18 @@
+//bi tran so LONG
 public class FIELDDiagrams {
 
-    private int[][] l;
+    private long[][] l;
 
     public long countDiagrams(int fieldOrder) {
-        this.l = new int[fieldOrder + 1][fieldOrder + 1];
-        int result = 0;
+        this.l = new long[fieldOrder + 1][fieldOrder + 1];
+        long result = 0;
         for (int i = 1; i <= fieldOrder; i++) {
             result += calculate(fieldOrder, i);
         }
         return result;
     }
 
-    int calculate(int level, int maxValue) {
+    long calculate(int level, int maxValue) {
 
         if (l[level][maxValue] != 0) {
             return l[level][maxValue];

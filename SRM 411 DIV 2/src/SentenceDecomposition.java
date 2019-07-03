@@ -5,7 +5,6 @@ import static java.lang.Math.*;
 
 public class SentenceDecomposition {
 
-    private List<String>[] itegrationFormWords;
 
     public int decompose(String sentence, String[] validWords) {
         int[] l = new int[sentence.length()];

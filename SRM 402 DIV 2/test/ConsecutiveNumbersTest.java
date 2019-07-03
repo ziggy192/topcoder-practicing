@@ -38,4 +38,10 @@ public class ConsecutiveNumbersTest {
 		int[] numbers = new int[] {1};
 		assertArrayEquals(new int[] {2 }, new ConsecutiveNumbers().missingNumber(numbers));
 	}
+
+	@Test(timeout=2000)
+	public void test6() {
+		int[] numbers = new int[] {1};
+		assertArrayEquals(new int[] {2 }, new ConsecutiveNumbers().missingNumber(numbers));
+	}
 }

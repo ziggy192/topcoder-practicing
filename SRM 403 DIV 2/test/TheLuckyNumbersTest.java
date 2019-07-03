@@ -30,4 +30,10 @@ public class TheLuckyNumbersTest {
 		int b = 5000000;
 		assertEquals(64, new TheLuckyNumbers().count(a, b));
 	}
+	@Test(timeout=2000)
+	public void test4() {
+		int a = 1;
+		int b = 1000000000;
+		assertEquals(1022, new TheLuckyNumbers().count(a, b));
+	}
 }

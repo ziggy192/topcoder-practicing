@@ -1,11 +1,12 @@
 
 import java.util.*;
 
+// bi tran so
 public class TheLuckyNumbers {
 
     public int count(int a, int b) {
         int count = 0;
-        int next = a;
+        long next = a;
         if (checkLucky(next)) {
             count++;
         } else {
@@ -29,7 +30,7 @@ public class TheLuckyNumbers {
         return count;
     }
 
-    private boolean checkLucky(int a) {
+    private boolean checkLucky(long a) {
 
         for (char c : String.valueOf(a).toCharArray()) {
             if (c != '4' && c != '7') {
@@ -39,7 +40,7 @@ public class TheLuckyNumbers {
         return true;
     }
 
-    private int findNextFromNormal(int a) {
+    private long findNextFromNormal(long a) {
         char[] chars = ("0" + a).toCharArray();
         for (int i = 1; i < chars.length; i++) {
             if ((chars[i] != '4' && chars[i] != '7') || (i == chars.length - 1)) {
@@ -68,10 +69,10 @@ public class TheLuckyNumbers {
             }
         }
 
-        return Integer.parseInt(new String(chars));
+        return Long.parseLong(new String(chars));
     }
 
-    private int findNext(int a) {
+    private long findNext(long a) {
 
 
         char[] chars = ("0" + a).toCharArray();
@@ -91,6 +92,7 @@ public class TheLuckyNumbers {
             }
         }
 
-        return Integer.parseInt(new String(resultStr));
+
+        return Long.parseLong(new String(resultStr));
     }
 }
