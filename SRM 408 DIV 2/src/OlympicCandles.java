@@ -2,6 +2,8 @@ import java.util.*;
 import java.math.*;
 import static java.lang.Math.*;
 
+//sai ngay test dau, array index out of bound ==" khi countnight > candles.length
+
 public class OlympicCandles {
 	
 	public int numberOfNights(int[] candles) {
@@ -10,8 +12,12 @@ public class OlympicCandles {
 		while (goodToGo) {
 			countNight++;
 			Arrays.sort(candles);
-
-			//chekc if enought to count
+			if (countNight > candles.length) {
+				goodToGo = false;
+				countNight--;
+				break;
+			}
+			//chekc if enough to count
 			for (int i = 1; i <= countNight; i++) {
 				candles[candles.length - i]--;
 				if (candles[candles.length - i] < 0) {

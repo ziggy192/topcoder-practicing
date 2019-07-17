@@ -2,6 +2,8 @@ import java.util.*;
 import java.math.*;
 import static java.lang.Math.*;
 
+
+//thieu truong hop largestGraph.isConnectedToMain == false & thieu constraint largestGraph must connectedToMain or else assign it to a random graph
 public class AddElectricalWires {
 	
 	public int maxNewWires(String[] wires, int[] gridConnections) {
@@ -72,9 +74,13 @@ public class AddElectricalWires {
 		// TODO: 6/26/19 find the largest graph
 		Graph largestGraph = null;
 		for (Graph graph : graphList) {
-			if (largestGraph == null || largestGraph.getNodeList().size() < graph.getNodeList().size()) {
+			if (graph.isConnectedToMain() && (largestGraph == null || largestGraph.getNodeList().size() < graph.getNodeList().size())) {
 				largestGraph = graph;
 			}
+		}
+
+		if (largestGraph == null) {
+			largestGraph = graphList.get(0);
 		}
 		// TODO: 6/26/19 let the largest eat the rest
 		for (Graph graph : graphList) {
@@ -82,13 +88,12 @@ public class AddElectricalWires {
 				largestGraph.eat(graph);
 			}
 		}
-		// TODO: 6/26/19 connect all
 
 		// TODO: 6/26/19 substract already edge
 
 		int result = 0;
 		for (Graph graph : graphList) {
-			if (graph.isConnectedToMain())
+			if (graph.isConnectedToMain() || graph == largestGraph)
 				result += graph.getSubstractedEdgeNumber();
 		}
 		return result;

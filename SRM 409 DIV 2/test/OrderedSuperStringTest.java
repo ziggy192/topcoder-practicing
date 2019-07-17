@@ -26,4 +26,10 @@ public class OrderedSuperStringTest {
 		String[] words = new String[] {"ab","bc", "de","ef","abcdef"};
 		assertEquals(12, new OrderedSuperString().getLength(words));
 	}
+
+	@Test(timeout=2000)
+	public void test4() {
+		String[] words = new String[] {"aaaaaaaaaaabaaaaaaaa", "bac", "aaaabacaaa", "ab", "ba", "a", "ca"};
+		assertEquals(33, new OrderedSuperString().getLength(words));
+	}
 }

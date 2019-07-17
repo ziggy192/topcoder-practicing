@@ -32,4 +32,9 @@ public class OlympicCandlesTest {
 		int[] candles = new int[] {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
 		assertEquals(4, new OlympicCandles().numberOfNights(candles));
 	}
+	@Test(timeout=2000)
+	public void test5() {
+		int[] candles = new int[] {	4, 5, 2};
+		assertEquals(3, new OlympicCandles().numberOfNights(candles));
+	}
 }

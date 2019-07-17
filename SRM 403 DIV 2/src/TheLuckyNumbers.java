@@ -1,7 +1,7 @@
 
 import java.util.*;
 
-// bi tran so
+// bi tran so (must be Long)
 public class TheLuckyNumbers {
 
     public int count(int a, int b) {

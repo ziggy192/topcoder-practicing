@@ -37,4 +37,11 @@ public class AddElectricalWiresTest {
 		int[] gridConnections = new int[] {2,4};
 		assertEquals(3, new AddElectricalWires().maxNewWires(wires, gridConnections));
 	}
+
+	@Test(timeout=2000)
+	public void test5() {
+		String[] wires = new String[]{"0000000001", "0000000000", "0000000000", "0000000000", "0000000000", "0000000000", "0000000000", "0000000000", "0000000000", "1000000000"};
+		int[] gridConnections = new int[] {3, 6, 8};
+		assertEquals(27, new AddElectricalWires().maxNewWires(wires, gridConnections));
+	}
 }

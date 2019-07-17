@@ -4,7 +4,7 @@ import java.math.*;
 import static java.lang.Math.*;
 
 
-//timeouted
+//timeouted do ko luu quy hoach dong lai ( salary)
 public class CorporationSalary {
 
     private String[] relations;
